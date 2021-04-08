@@ -1,1 +1,1 @@
-# nextjs-firechat
+# NextJS FireChat
