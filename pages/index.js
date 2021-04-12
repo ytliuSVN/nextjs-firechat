@@ -1,26 +1,67 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 // Firebase deps
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+import firebase from '../shared/configs/firebase';
+// Components
+import { Button } from '../components';
 
-// Initialize Firebase
-firebase.initializeApp({
-  apiKey: 'AIzaSyDtpGIPW1hpu5k31VOjZ5TnJ5ZFMNsDN_4',
-  authDomain: 'nextjs-firechat.firebaseapp.com',
-  projectId: 'nextjs-firechat',
-  storageBucket: 'nextjs-firechat.appspot.com',
-  messagingSenderId: '403202463289',
-  appId: '1:403202463289:web:8a4a1be2a6c835dad69fe8',
-});
+const auth = firebase.auth();
 
 function Home() {
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState(() => auth.currentUser);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(false);
+      }
+      if (initializing) {
+        setInitializing(false);
+      }
+    });
+
+    // Cleanup subscription
+    return unsubscribe;
+  }, [initializing]);
+
+  const signInWithGoogle = async () => {
+    // Retrieve Google provider object
+    const provider = new firebase.auth.GoogleAuthProvider();
+    // Set language to the default browser preference
+    auth.useDeviceLanguage();
+    // Start sign in process
+    try {
+      await auth.signInWithPopup(provider);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  const signOut = async () => {
+    try {
+      await auth.signOut();
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  if (initializing) return 'Loading ...';
+
   return (
     <div>
       <Head>
         <title>NextJS FireChat</title>
       </Head>
+      {user ? (
+        <>
+          <Button onClick={signOut}>Sign out</Button>
+        </>
+      ) : (
+        <Button onClick={signInWithGoogle}>Sign in with Google</Button>
+      )}
     </div>
   );
 }
