@@ -3,7 +3,7 @@ import Head from 'next/head';
 // Firebase deps
 import firebase from '../shared/configs/firebase';
 // Components
-import { Button } from '../components';
+import { Button, Channel } from '../components';
 
 const auth = firebase.auth();
 
@@ -58,6 +58,7 @@ function Home() {
       {user ? (
         <>
           <Button onClick={signOut}>Sign out</Button>
+          <Channel user={user} />
         </>
       ) : (
         <Button onClick={signInWithGoogle}>Sign in with Google</Button>

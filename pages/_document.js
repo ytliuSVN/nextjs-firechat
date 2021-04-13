@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <link rel='icon' href='/favicon.svg' />
+          <link rel='icon' href='/favicon.png' />
           <meta name='description' content='A Realtime Chat App with NextJS and Firebase' />
           <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
         </Head>
