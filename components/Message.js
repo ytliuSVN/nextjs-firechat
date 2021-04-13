@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { formatRelative } from 'date-fns';
 
 // Uppercase the first letter
@@ -25,7 +26,7 @@ function Message({
   return (
     <div>
       {photoURL ? (
-        <img
+        <Image
           src={photoURL}
           alt='Avatar'
           className='rounded-full mr-4'
