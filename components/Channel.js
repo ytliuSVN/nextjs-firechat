@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 // Firebase deps
 import firebase from '../shared/configs/firebase';
 // Components
@@ -73,5 +74,13 @@ function Channel({ user = null }) {
     </>
   );
 }
+
+Channel.propTypes = {
+  user: PropTypes.shape({
+    uid: PropTypes.string,
+    displayName: PropTypes.string,
+    photoURL: PropTypes.string,
+  }),
+};
 
 export default Channel;
