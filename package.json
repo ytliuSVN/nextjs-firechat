@@ -29,8 +29,11 @@
     "webpack": "^5.31.2"
   },
   "devDependencies": {
+    "@svgr/webpack": "^5.5.0",
     "autoprefixer": "^10.2.5",
+    "file-loader": "^6.2.0",
     "postcss": "^8.2.10",
-    "tailwindcss": "^2.1.1"
+    "tailwindcss": "^2.1.1",
+    "url-loader": "^4.1.1"
   }
 }
