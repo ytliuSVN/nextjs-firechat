@@ -84,6 +84,15 @@ function Home() {
       <Head>
         <title>NextJS FireChat</title>
       </Head>
+      <header
+        className='flex-shrink-0 flex items-center justify-between px-4 sm:px-8 shadow-md'
+        style={{ height: 'var(--topbar-height)' }}
+      >
+        {/* <a href='https://alterclass.io/courses/react'>
+          <img src={brandLogo} alt='AlterClass' width={150} />
+        </a> */}
+        <div className='flex items-center'></div>
+      </header>
       {user ? (
         <>
           <GoogleButton onClick={signOut}>Sign out</GoogleButton>
