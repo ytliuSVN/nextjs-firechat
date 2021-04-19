@@ -71,7 +71,10 @@ function Home() {
           <p className='mb-8 text-lg text-center text-gray-500'>
             The easiest way to chat with people all around the world.
           </p>
-          <GoogleButton onClick={signInWithGoogle}>
+          <GoogleButton
+            onClick={signInWithGoogle}
+            className='rounded shadow-button pl-6 pr-8 py-3 bg-white hover:bg-gray-50 text-gray-600 font-medium flex items-center justify-center overflow-y-hidden focus:outline-none focus:ring focus:ring-primary-500 focus:ring-opacity-75'
+          >
             Sign in with Google
           </GoogleButton>
         </div>
@@ -88,19 +91,26 @@ function Home() {
         className='flex-shrink-0 flex items-center justify-between px-4 sm:px-8 shadow-md'
         style={{ height: 'var(--topbar-height)' }}
       >
-        {/* <a href='https://alterclass.io/courses/react'>
-          <img src={brandLogo} alt='AlterClass' width={150} />
-        </a> */}
-        <div className='flex items-center'></div>
+        <a href='https://www.kaiostech.com/'>
+          <img src='/KaiOS_logo.svg' alt='KaiOS_logo' width={150} />
+        </a>
+        <div className='flex items-center'>
+          {user ? (
+            <button
+              onClick={signOut}
+              className='uppercase text-sm font-medium text-primary-500 hover:text-white tracking-wide hover:bg-primary-500 bg-transparent rounded py-2 px-4 mr-4 focus:outline-none focus:ring focus:ring-primary-500 focus:ring-opacity-75 transition-all'
+            >
+              Sign out
+            </button>
+          ) : null}
+        </div>
       </header>
-      {user ? (
-        <>
-          <GoogleButton onClick={signOut}>Sign out</GoogleButton>
-          <Channel user={user} />
-        </>
-      ) : (
-        renderContent()
-      )}
+      <main
+        className='flex-1'
+        style={{ maxHeight: 'calc(100% - var(--topbar-height))' }}
+      >
+        {renderContent()}
+      </main>
     </div>
   );
 }
