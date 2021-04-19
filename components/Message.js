@@ -38,7 +38,7 @@ function Message({
       <div className='ml-4'>
         <div className='flex items-center mb-1'>
           {displayName ? (
-            <p className='mr-2 text-primary-500'>{displayName}</p>
+            <p className='mr-2 text-KaiBrand-500'>{displayName}</p>
           ) : null}
           {createdAt?.seconds ? (
             <span className='text-gray-500 text-xs'>
