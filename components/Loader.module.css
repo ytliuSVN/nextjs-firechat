@@ -1,0 +1,168 @@
+.container {
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.trunk-rect {
+  width: 0.4rem;
+  height: 1.1rem;
+  animation: stretching 1s cubic-bezier(0.5, 0, 0.5, 1) infinite,
+    colorize 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.upper-circle,
+.lower-circle {
+  border-radius: 50%;
+  display: block;
+  width: 0.4rem;
+  height: 0.4rem;
+  content: '';
+}
+
+.upper-circle {
+  margin-bottom: -50%;
+  animation: float-down 1s cubic-bezier(0.5, 0, 0.5, 1) infinite,
+    colorize 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.lower-circle {
+  margin-top: -50%;
+  animation: float-up 1s cubic-bezier(0.5, 0, 0.5, 1) infinite,
+    colorize 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.stick:nth-child(2) * {
+  animation-delay: 0.1s;
+}
+
+.stick:nth-child(3) * {
+  animation-delay: 0.2s;
+}
+
+.jumping {
+  animation: jumping 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.spinning {
+  animation: spinning 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.middle {
+  margin: 0 1.5rem;
+}
+
+@keyframes jumping {
+  0% {
+    transform: translateY(1rem);
+  }
+
+  50% {
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    transform: translateY(1rem);
+  }
+}
+
+@keyframes colorize {
+  0% {
+    background-color: #8000ff;
+  }
+
+  10% {
+    background-color: #0073e6;
+  }
+
+  20% {
+    background-color: #0073e6;
+  }
+
+  30% {
+    background-color: #00bf60;
+  }
+
+  40% {
+    background-color: #00bf60;
+  }
+
+  50% {
+    background-color: #ff4f1a;
+  }
+
+  60% {
+    background-color: #ff4f1a;
+  }
+
+  70% {
+    background-color: #e60060;
+  }
+
+  80% {
+    background-color: #e60060;
+  }
+
+  90% {
+    background-color: #8000ff;
+  }
+
+  100% {
+    background-color: #8000ff;
+  }
+}
+
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes stretching {
+  0% {
+    transform: scaleY(0);
+  }
+
+  50% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(-0.55rem);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-0.55rem);
+  }
+}
+
+@keyframes float-down {
+  0% {
+    transform: translateY(0.55rem);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0.55rem);
+  }
+}

@@ -3,7 +3,7 @@ import Head from 'next/head';
 // Firebase deps
 import firebase from '../shared/configs/firebase';
 // Components
-import { GoogleButton, Channel } from '../components';
+import { GoogleButton, Channel, Loader } from '../components';
 // Icons
 import Burn from '../public/burn';
 
@@ -54,7 +54,7 @@ function Home() {
     if (initializing) {
       return (
         <div className='flex items-center justify-center h-full'>
-          {/* <Loader size="lg" /> */}
+          <Loader />
         </div>
       );
     }
