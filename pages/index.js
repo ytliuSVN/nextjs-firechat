@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import styles from '../styles/Home.module.css';
 // Firebase deps
 import firebase from '../shared/configs/firebase';
 // Components
@@ -88,8 +89,7 @@ function Home() {
         <title>NextJS FireChat</title>
       </Head>
       <header
-        className='flex-shrink-0 flex items-center justify-between px-4 sm:px-8 shadow-md'
-        style={{ height: 'var(--topbar-height)' }}
+        className={`flex-shrink-0 flex items-center justify-between px-4 sm:px-8 shadow-md ${styles.header_space}`}
       >
         <a href='https://www.kaiostech.com/'>
           <img src='/KaiOS_logo.svg' alt='KaiOS_logo' width={150} />
@@ -105,12 +105,7 @@ function Home() {
           ) : null}
         </div>
       </header>
-      <main
-        className='flex-1'
-        style={{ maxHeight: 'calc(100% - var(--topbar-height))' }}
-      >
-        {renderContent()}
-      </main>
+      <main className={`flex-1 ${styles.main_space}`}>{renderContent()}</main>
     </div>
   );
 }

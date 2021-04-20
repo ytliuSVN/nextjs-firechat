@@ -1,0 +1,7 @@
+.header_space {
+  height: 60px;
+}
+
+.main_space {
+  max-height: calc(100% - 60px);
+}

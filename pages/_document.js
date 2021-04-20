@@ -6,12 +6,20 @@ class MyDocument extends Document {
       <Html lang='en'>
         <Head>
           <link rel='icon' href='/chat.svg' />
-          <meta name='description' content='A Realtime Chat App with NextJS and Firebase' />
+          <meta
+            name='description'
+            content='A Realtime Chat App with NextJS and Firebase'
+          />
           <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
         </Head>
         <body>
           <Main />
           <NextScript />
+          <style jsx global>{`
+            #__next {
+              height: 100%;
+            }
+          `}</style>
         </body>
       </Html>
     );
