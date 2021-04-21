@@ -69,7 +69,7 @@ function Channel({ user = null }) {
           <div className='border-b dark:border-gray-600 border-gray-200 py-8 mb-4'>
             <div className='font-bold text-3xl text-center'>
               <p className='mb-1'>Welcome to</p>
-              <p className='mb-3'>NextJS FireChat</p>
+              <p className='mb-3'>KaiOS FireChat</p>
             </div>
             <p className='text-gray-400 text-center'>
               This is the beginning of this chat.

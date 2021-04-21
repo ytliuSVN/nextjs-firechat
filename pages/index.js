@@ -6,7 +6,7 @@ import firebase from '../shared/configs/firebase';
 // Components
 import { GoogleButton, Channel, Loader } from '../components';
 // Icons
-import Burn from '../public/burn';
+import Burn from '../components/Burn';
 
 const auth = firebase.auth();
 
@@ -67,7 +67,7 @@ function Home() {
         <div className='flex flex-col items-center justify-center max-w-xl w-full mx-4 p-8 rounded-md shadow-card bg-white dark:bg-coolDark-600 transition-all'>
           <h2 className='mb-2 text-3xl flex items-center'>
             <Burn />
-            NextJS FireChat
+            KaiOS FireChat
           </h2>
           <p className='mb-8 text-lg text-center text-gray-500'>
             The easiest way to chat with people all around the world.
@@ -86,13 +86,13 @@ function Home() {
   return (
     <div className='flex flex-col h-full bg-white dark:bg-coolDark-500 dark:text-white transition-colors'>
       <Head>
-        <title>NextJS FireChat</title>
+        <title>KaiOS FireChat</title>
       </Head>
       <header
         className={`flex-shrink-0 flex items-center justify-between px-4 sm:px-8 shadow-md ${styles.header_space}`}
       >
         <a href='https://www.kaiostech.com/'>
-          <img src='/KaiOS_logo.svg' alt='KaiOS_logo' width={150} />
+          <img src='/assets/KaiOS_logo.svg' alt='KaiOS_logo' width={150} />
         </a>
         <div className='flex items-center'>
           {user ? (

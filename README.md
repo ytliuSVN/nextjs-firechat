@@ -10,6 +10,18 @@ A Real-time chat interface where multiple users can interact with each other by 
 
 ## App Details
 
+### Login Page
+
+To enter the chat and interact with people, the user must log in using their Google account.
+
+![Login Page](./public/assets/login.png)
+
+### Chat Page
+
+Once logged in, the user can read the previous messages (we limit it to 100 messages) from the chat and start chatting by sending messages.
+
+![Chat Page](./public/assets/room.png)
+
 ### Instructions
 
 1. Clone the project repository: `git clone https://github.com/ytliuSVN/nextjs-firechat.git`
@@ -32,3 +44,9 @@ NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
 NEXT_PUBLIC_FIREBASE_APP_ID=
 ```
+
+## Useful links and resources
+
+- [Next.js: Firebase Authentication and Middleware for API Routes](https://dev.to/dingran/next-js-firebase-authentication-and-middleware-for-api-routes-29m1)
+- [Get up and running with Tailwind CSS and Next.js](https://dev.to/notrab/get-up-and-running-with-tailwind-css-and-next-js-3a73)
+- [Build A REALTIME CHAT APP In 5 MIN With React And Firebase](https://alterclass.io/blog/build-a-realtime-chat-app-in-5-min-with-react-and-firebase)
