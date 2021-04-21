@@ -9,10 +9,8 @@
     0 2px 4px 0 rgba(17, 22, 26, 0.08), 0 4px 8px 0 rgba(17, 22, 26, 0.08);
 }
 
-@layer base {
-  html,
-  body,
-  #__next {
-    @apply h-full;
-  }
+html,
+body,
+#__next {
+  @apply flex flex-col h-screen;
 }

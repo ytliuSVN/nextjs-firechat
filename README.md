@@ -6,21 +6,15 @@ Source code of the NextJS FireChat app built with NextJS, Firebase, and Tailwind
 ## User Stories
 
 A Real-time chat interface where multiple users can interact with each other by sending messages.
-
-
+To enter the chat and interact with people, the user must log in using their Google account.
+Once logged in, the user can read the previous messages (we limit it to 100 messages) from the chat and start chatting by sending messages.
 ## App Details
 
-### Login Page
 
-To enter the chat and interact with people, the user must log in using their Google account.
+| Login Page | Chat Page  |
+| :---:   | :-: |
+| ![Login Page](./public/assets/login.png) | ![Chat Page](./public/assets/room.png) |
 
-![Login Page](./public/assets/login.png)
-
-### Chat Page
-
-Once logged in, the user can read the previous messages (we limit it to 100 messages) from the chat and start chatting by sending messages.
-
-![Chat Page](./public/assets/room.png)
 
 ### Instructions
 
