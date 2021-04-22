@@ -6,13 +6,24 @@ import firebase from '../shared/configs/firebase';
 // Components
 import { GoogleButton, Channel, Loader } from '../components';
 // Icons
-import Burn from '../components/Burn';
+import { Burn, MoonIcon, SunIcon } from '../components';
+// Hooks
+// import { useDarkMode } from '../components/hooks';
 
 const auth = firebase.auth();
 
 function Home() {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState(() => auth.currentUser);
+
+  // const [darkMode, setDarkMode] = useDarkMode();
+  const darkMode = false;
+
+  const brandLogo = darkMode
+    ? '/assets/Gray_logo.svg'
+    : '/assets/KaiOS_logo.svg';
+
+  const ThemeIcon = darkMode ? SunIcon : MoonIcon;
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -92,7 +103,7 @@ function Home() {
         className={`flex-shrink-0 flex items-center justify-between px-4 sm:px-8 shadow-md ${styles.header_space}`}
       >
         <a href='https://www.kaiostech.com/'>
-          <img src='/assets/KaiOS_logo.svg' alt='KaiOS_logo' width={150} />
+          <img src={brandLogo} alt='KaiOS_logo' width={150} />
         </a>
         <div className='flex items-center'>
           {user ? (
@@ -103,6 +114,10 @@ function Home() {
               Sign out
             </button>
           ) : null}
+          <ThemeIcon
+            className='h-8 w-8 cursor-pointer'
+            // onClick={() => setDarkMode((prev) => !prev)}
+          />
         </div>
       </header>
       <main className={`flex-1 ${styles.main_space}`}>{renderContent()}</main>
