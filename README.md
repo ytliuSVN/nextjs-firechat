@@ -2,6 +2,7 @@
 
 Source code of the NextJS FireChat app built with NextJS, Firebase, and Tailwind CSS. Deployed on Vercel.
 
+> **NOTE:** This is ***not*** an official website, just for practice purposes.
 
 ## User Stories
 
