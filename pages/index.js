@@ -7,8 +7,8 @@ import firebase from '../shared/configs/firebase';
 import { GoogleButton, Channel, Loader } from '../components';
 // Icons
 import { Burn, MoonIcon, SunIcon } from '../components';
-// Hooks
-// import { useDarkMode } from '../components/hooks';
+// Theme
+import { useTheme } from 'next-themes';
 
 const auth = firebase.auth();
 
@@ -16,14 +16,22 @@ function Home() {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState(() => auth.currentUser);
 
-  // const [darkMode, setDarkMode] = useDarkMode();
-  const darkMode = false;
+  const [darkMode, setDarkMode] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const switchTheme = () => {
+    if (darkMode) {
+      setTheme(theme === 'light' ? 'dark' : 'light');
+    }
+  };
 
-  const brandLogo = darkMode
-    ? '/assets/Gray_logo.svg'
-    : '/assets/KaiOS_logo.svg';
+  const brandLogo =
+    theme === 'dark' ? '/assets/Gray_logo.svg' : '/assets/KaiOS_logo.svg';
 
-  const ThemeIcon = darkMode ? SunIcon : MoonIcon;
+  const ThemeIcon = theme === 'dark' ? SunIcon : MoonIcon;
+
+  useEffect(() => {
+    setDarkMode(true);
+  }, []);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -114,10 +122,7 @@ function Home() {
               Sign out
             </button>
           ) : null}
-          <ThemeIcon
-            className='h-8 w-8 cursor-pointer'
-            // onClick={() => setDarkMode((prev) => !prev)}
-          />
+          <ThemeIcon className='h-8 w-8 cursor-pointer' onClick={switchTheme} />
         </div>
       </header>
       <main className={`flex-1 ${styles.main_space}`}>{renderContent()}</main>
