@@ -93,10 +93,7 @@ function Home() {
           <p className='mb-8 text-lg text-center text-gray-500'>
             The easiest way to chat with people all around the world.
           </p>
-          <GoogleButton
-            onClick={signInWithGoogle}
-            className='rounded shadow-button pl-6 pr-8 py-3 bg-white hover:bg-gray-50 text-gray-600 font-medium flex items-center justify-center overflow-y-hidden focus:outline-none focus:ring focus:ring-KaiBrand-500 focus:ring-opacity-75'
-          >
+          <GoogleButton onClick={signInWithGoogle}>
             Sign in with Google
           </GoogleButton>
         </div>
