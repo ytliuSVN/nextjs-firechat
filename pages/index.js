@@ -16,22 +16,24 @@ function Home() {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState(() => auth.currentUser);
 
-  const [darkMode, setDarkMode] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  // When mounted on client, now we can show the UI
+  useEffect(() => setMounted(true), []);
+
   const switchTheme = () => {
-    if (darkMode) {
+    if (mounted) {
       setTheme(theme === 'light' ? 'dark' : 'light');
     }
   };
 
   const brandLogo =
-    theme === 'dark' ? '/assets/Gray_logo.svg' : '/assets/KaiOS_logo.svg';
+    mounted && theme === 'dark'
+      ? '/assets/Gray_logo.svg'
+      : '/assets/KaiOS_logo.svg';
 
-  const ThemeIcon = theme === 'dark' ? SunIcon : MoonIcon;
-
-  useEffect(() => {
-    setDarkMode(true);
-  }, []);
+  const ThemeIcon = mounted && theme === 'dark' ? SunIcon : MoonIcon;
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
