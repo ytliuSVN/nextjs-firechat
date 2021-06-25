@@ -14,7 +14,7 @@ Once logged in, the user can read the previous messages (we limit it to 100 mess
 
 | Login Page | Chat Page  |
 | :---:   | :-: |
-| ![Login Page](./public/assets/login.png) | ![Chat Page](./public/assets/room.png) |
+| ![Login Page](./public/assets/d_login.png) | ![Chat Page](./public/assets/d_room.png) |
 
 
 ### Instructions
@@ -45,3 +45,4 @@ NEXT_PUBLIC_FIREBASE_APP_ID=
 - [Next.js: Firebase Authentication and Middleware for API Routes](https://dev.to/dingran/next-js-firebase-authentication-and-middleware-for-api-routes-29m1)
 - [Get up and running with Tailwind CSS and Next.js](https://dev.to/notrab/get-up-and-running-with-tailwind-css-and-next-js-3a73)
 - [Build A REALTIME CHAT APP In 5 MIN With React And Firebase](https://alterclass.io/blog/build-a-realtime-chat-app-in-5-min-with-react-and-firebase)
+- [Dark mode with Tailwindcss in Next.js](https://dev.to/enochndika/dark-mode-with-tailwindcss-in-next-js-2if5)
