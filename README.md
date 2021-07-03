@@ -19,7 +19,7 @@ Once logged in, the user can read the previous messages (we limit it to 100 mess
 
 ### Instructions
 
-1. Clone the project repository: `git clone https://github.com/ytliuSVN/nextjs-firechat.git`
+1. Clone the project repository: `git clone git@github.com:ytliuSVN/nextjs-firechat.git`
 2. Navigate to the project folder: `cd nextjs-firechat`
 3. Install the dependencies: `npm install`
 4. Start the app in the development mode: `npm run dev`

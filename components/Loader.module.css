@@ -7,15 +7,15 @@
   pointer-events: none;
 }
 
-.trunk-rect {
+.trunk_rect {
   width: 0.4rem;
   height: 1.1rem;
   animation: stretching 1s cubic-bezier(0.5, 0, 0.5, 1) infinite,
     colorize 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 
-.upper-circle,
-.lower-circle {
+.upper_circle,
+.lower_circle {
   border-radius: 50%;
   display: block;
   width: 0.4rem;
@@ -23,13 +23,13 @@
   content: '';
 }
 
-.upper-circle {
+.upper_circle {
   margin-bottom: -50%;
   animation: float-down 1s cubic-bezier(0.5, 0, 0.5, 1) infinite,
     colorize 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 
-.lower-circle {
+.lower_circle {
   margin-top: -50%;
   animation: float-up 1s cubic-bezier(0.5, 0, 0.5, 1) infinite,
     colorize 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
